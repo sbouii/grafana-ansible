@@ -1,0 +1,25 @@
+- name: Add GPG key
+  apt_key:
+    url: https://packagecloud.io/gpg.key 
+    state: present
+
+- name: Add repository
+  repo: deb https://packagecloud.io/grafana/stable/debian/ jessie main
+  state: present
+  filename: {{ repository_filename_name }}
+
+- name: Install Grafana
+  apt: 
+   name: grafana
+   state: installed
+   update_cache: yes
+   notify:
+    - init grafana service
+
+- name: Allow grafana port in UFW
+  ufw:
+   rule: allow
+   port: {{ grafana_port }}
+   proto: tcp
+   notify:
+    - start grafana service

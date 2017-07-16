@@ -1,0 +1,7 @@
+- name: init grafana
+  command: update-rc.d grafana-server defaults 95 10
+
+- name: start kubelet service
+  service:
+   name: grafana
+   state: started
