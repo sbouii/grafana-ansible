@@ -1,0 +1,33 @@
+- name: Add Grafana repository
+  yum_repository:
+    name: grafana
+    description: grafana YUM repos
+    baseurl: https://packagecloud.io/grafana/stable/el/6/$basearch
+    enabled: yes
+    gpgcheck: yes
+    repo_gpgcheck: yes
+    gpgkey:
+       - https://packagecloud.io/gpg.key https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana
+    sslverify: yes
+    sslcacert:
+       - /etc/pki/tls/certs/ca-bundle.crt
+
+- name: Install grafana
+  yum:
+    name: grafana
+    state: installed
+    update_cache: yes
+
+# firewalld is inactive by default on redhat disctributions
+- name: Enable firewalld
+  service: 
+    name: firewalld
+    state: started
+    enabled: yes
+    
+- name: Allow grafana port 
+  command: firewall-cmd --permanent --zone=public --add-port=3000/tcp
+  notify: 
+    - restart firewalld
+    - start grafana
+

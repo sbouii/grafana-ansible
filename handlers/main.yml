@@ -1,7 +1,13 @@
 - name: init grafana
   command: update-rc.d grafana-server defaults 95 10
 
-- name: start kubelet service
+- name: start grafana service
   service:
    name: grafana
+   enabled: yes
    state: started
+
+- name: restart firewalld service
+  service:
+   name: firewalld
+   state: restarted   
