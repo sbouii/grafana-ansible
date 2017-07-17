@@ -1,9 +1,9 @@
-# to fix the start-up of the service at boot in debian distributions
-- name: init grafana debian
+
+- name: Debian | init grafana service
   command: update-rc.d grafana-server defaults 95 10
 
-#to fix the start-up of the service at boot in redhat distributions
-- name: init grafana redhat
+
+- name: RedHat | init grafana service
   systemd:
    state: restarted
    enabled: yes

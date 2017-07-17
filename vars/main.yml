@@ -1,2 +1,4 @@
-repository_filename_name: grafana
+debian_repository_filename: grafana
 grafana_port: 3000
+redhat_grafana_repository_name: grafana
+redhat_grafana_repository_description: YUM repository

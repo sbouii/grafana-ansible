@@ -1,7 +1,7 @@
-- name: Add Grafana repository
+- name: RedHat | Add Grafana repository
   yum_repository:
-    name: grafana
-    description: grafana YUM repos
+    name: {{ redhat_grafana_repository_name }}
+    description: {{ redhat_grafana_repository_name }}
     baseurl: https://packagecloud.io/grafana/stable/el/6/$basearch
     enabled: yes
     gpgcheck: yes
@@ -12,20 +12,21 @@
     sslcacert:
        - /etc/pki/tls/certs/ca-bundle.crt
 
-- name: Install grafana
+- name: RedHat | Install grafana
   yum:
     name: grafana
     state: installed
     update_cache: yes
-
+    notify:
+      - RedHat | init grafana service redhat
 # firewalld is inactive by default on redhat disctributions
-- name: Enable firewalld
+- name: RedHat | Enable firewalld
   service: 
     name: firewalld
     state: started
     enabled: yes
     
-- name: Allow grafana port 
+- name: RedHat | Allow grafana port 
   command: firewall-cmd --permanent --zone=public --add-port=3000/tcp
   notify: 
     - restart firewalld

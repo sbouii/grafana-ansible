@@ -1,0 +1,10 @@
+- name: Debian | check whether grafana is already installed
+  shell: grafana-cli --help 
+  ignore-errors: True
+  register: grafana_installed 
+  changed_when: false 
+
+- debug:
+    msg: 'It seems that grafana is already installed'
+    when:  grafana_installed.rc == 0
+

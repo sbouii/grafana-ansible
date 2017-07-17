@@ -1,0 +1,7 @@
+- include: validate.yml
+
+- include: Debian.yml
+  when: (grafana_installed | failed) and (ansible_os_family == 'Debian')
+
+- include: RedHat.yml
+  when: (grafan_installed | failed) and (ansible_os_family == 'RedHat')
