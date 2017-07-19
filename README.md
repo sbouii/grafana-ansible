@@ -3,7 +3,7 @@
 ## Description
 
 This is an ansible role for installing Grafana on Debian and RedHat distributions , it doesn't handle the configuration aspect of 
-Grafana . I prefer always to separe the installation and the configuration/monitoring aspects of a software for organization  purposes.It uses the infrastructure testing tool **[KitchenCi](http://kitchen.ci/)** to verify if the infrastructure is well setup and configured as expected.
+Grafana . I prefer always to separe the installation and the configuration/monitoring aspect of a software for organizing  purposes.It uses the infrastructure testing tool **[KitchenCi](http://kitchen.ci/)** to verify if the infrastructure is well setup and configured as expected.
 
 ## Requirements
 
