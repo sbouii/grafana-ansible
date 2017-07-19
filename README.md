@@ -1,4 +1,4 @@
-# Grafana_ansible_role
+# grafana_ansible
 
 ## Description
 
