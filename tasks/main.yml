@@ -1,7 +1,13 @@
 - include: validate.yml
-
+  tags: 
+    - install-grafana
+   
 - include: Debian.yml
   when: (grafana_installed | failed) and (ansible_os_family == 'Debian')
+  tags:
+    - install-grafana
 
 - include: RedHat.yml
   when: (grafan_installed | failed) and (ansible_os_family == 'RedHat')
+  tags:
+    - install-grafana
