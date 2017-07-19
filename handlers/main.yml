@@ -16,7 +16,7 @@
    enabled: yes
    state: started
 
-- name: restart firewalld service
+- name: RedHat | restart firewalld service
   service:
    name: firewalld
    state: restarted   

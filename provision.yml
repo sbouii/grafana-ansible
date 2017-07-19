@@ -1,0 +1,4 @@
+- hosts: ansible_vm
+  sudo: yes
+  roles:
+   - ansible_vm
