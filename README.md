@@ -60,17 +60,6 @@ Finally call the role within you Ansible playbook:
   roles:
     - grafana_ansible
 ```
-
-
-Finally call the role within you Ansible playbook:
-```yaml
----
-- hosts: localhost
-  sudo: yes
-  roles:
-    - grafana_ansible
-```
-
 ## Development and Testing
 ### Test with Vagrant
 For quick tests, you can spin up a Debian VM using Vagrant. You maybe need to adapt the Vagrantfile to suit your environment (IP addresses, etc).
