@@ -11,3 +11,7 @@
   when: (grafan_installed | failed) and (ansible_os_family == 'RedHat')
   tags:
     - install-grafana
+# Configure grafana init settings.
+- include: settings.yml
+  tags:
+    - install-grafana

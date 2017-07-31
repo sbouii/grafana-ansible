@@ -1,7 +1,7 @@
 - name: RedHat | Add Grafana repository
   yum_repository:
     name: {{ redhat_grafana_repository_name }}
-    description: {{ redhat_grafana_repository_name }}
+    description: {{ redhat_grafana_repository_description }}
     baseurl: https://packagecloud.io/grafana/stable/el/6/$basearch
     enabled: yes
     gpgcheck: yes

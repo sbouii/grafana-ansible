@@ -1,4 +1,18 @@
-debian_repository_filename: grafana
-grafana_port: 3000
-redhat_grafana_repository_name: grafana
-redhat_grafana_repository_description: YUM repository
+ ---
+
+ grafana:
+   grafana_port: 3000
+   
+
+ deb:
+   grafana_repo_url: deb https://packagecloud.io/grafana/stable/debian/ jessie main
+   grafana_repo_key_url: https://packagecloud.io/gpg.key 
+   debian_repository_filename: grafana
+   grafana_init_file: /etc/default/grafana
+
+ rh:
+   grafana_repo_url: https://packagecloud.io/grafana/stable/el/6/$basearch
+   grafana_repo_key_url:  https://packagecloud.io/gpg.key https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana
+   redhat_grafana_repository_name: grafana
+   redhat_grafana_repository_description: YUM repository
+   grafana_init_file:

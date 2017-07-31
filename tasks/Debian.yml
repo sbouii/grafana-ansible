@@ -6,7 +6,7 @@
 - name: Debian | Add repository
   repo: deb https://packagecloud.io/grafana/stable/debian/ jessie main
   state: present
-  filename: {{ debian_repository_filename }}
+  filename: {{ debian_grafana_repository_filename }}
 
 - name: Debian | Install Grafana
   apt: 
