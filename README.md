@@ -53,8 +53,8 @@ Available variables are listed below, see defaults/main.yml for the default valu
 
 - **`grafana_init_changes`**
 
-  - **`option: "GRAFANA_USER"
-    value: "{{ grafana_user }}"
+  - **`option: "GRAFANA_USER"`**
+    **`value: "{{ grafana_user }}"`**
   - option: "GRAFANA_GROUP"
     value: "{{ grafana_group }}"
   - option: "GRAFANA_HOME"
