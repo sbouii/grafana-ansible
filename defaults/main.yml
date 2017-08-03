@@ -1,4 +1,32 @@
 ---
-
-jenkins_admin_username: admin
-jenkins_admin_password: admin
+ grafana_port: 3000
+ grafana_user: grafana
+ grafana_group: grafana
+ grafana_home: /usr/share/grafana
+ grafana_log_directory: /var/log/grafana
+ grafana_data_directory: /var/lib/grafana
+ grafana_max_open_files: 10000
+ grafana_conf_directory: /etc/grafana
+ grafana_conf_file: /etc/grafana/grafana.ini
+ grafana_directory_plugin: /var/lib/grafana/plugins
+grafana_init_changes:
+  - option: "GRAFANA_USER"
+    value: "{{ grafana_user }}"
+  - option: "GRAFANA_GROUP"
+    value: "{{ grafana_group }}"
+  - option: "GRAFANA_HOME"
+    value:  "{{ grafana_home }}"
+  - option: "LOG_DIR"
+    value: "{{ grafana_log_directory }}"
+  - option: "DATA_DIR"
+    value: "{{ grafana_data_directory }}"
+  - option: "MAX_OPEN_FILES"
+    value: "{{ grafana_max_open_files }}"
+  - option: "CONF_DIR"
+    value: "{{ grafana_conf_directory }}"
+  - option: "CONF_FILE"
+    value: "{{ grafana_conf_file }}"
+  - option: "RESTART_ON_UPGRADE"
+    value: "true"
+  - option: "PLUGINS_DIR"
+    value: "{{ grafana_directory_plugin }}"

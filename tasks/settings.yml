@@ -1,1 +1,11 @@
-yt
+- name: Modify variables in init file
+  lineinfile:
+    dest: "{{ grafana_init_file }}"
+    insertafter: '^{{ item.option }}='
+    regexp: '^{{ item.option}}=\"\${{ item.option }} '
+    line: '{{ item.option }}="${{ item.option }} {{ item.value }}"'
+    state: present
+  with_items:
+       "{{ grafana_init_changes }}"
+  notify:
+    - restart grafana service

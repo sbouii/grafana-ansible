@@ -1,10 +1,10 @@
 - name: Debian | Add GPG key
   apt_key:
-    url: https://packagecloud.io/gpg.key 
+    url: {{ grafana_repo_key_url }} 
     state: present
 
 - name: Debian | Add repository
-  repo: deb https://packagecloud.io/grafana/stable/debian/ jessie main
+  repo: {{ grafana_repo_url }}
   state: present
   filename: {{ debian_grafana_repository_filename }}
 

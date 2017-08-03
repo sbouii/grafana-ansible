@@ -2,15 +2,13 @@
   yum_repository:
     name: {{ redhat_grafana_repository_name }}
     description: {{ redhat_grafana_repository_description }}
-    baseurl: https://packagecloud.io/grafana/stable/el/6/$basearch
+    baseurl: {{ grafana_repo_url }}
     enabled: yes
     gpgcheck: yes
     repo_gpgcheck: yes
-    gpgkey:
-       - https://packagecloud.io/gpg.key https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana
+    gpgkey: {{ grafana_repo_key_url }}
     sslverify: yes
-    sslcacert:
-       - /etc/pki/tls/certs/ca-bundle.crt
+    sslcacert: {{ sslcacert_file }}
 
 - name: RedHat | Install grafana
   yum:

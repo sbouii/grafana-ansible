@@ -8,15 +8,19 @@
    state: restarted
    enabled: yes
    daemon_reload: yes
-   name: grafana
-
-- name: start grafana service
-  service:
-   name: grafana
-   enabled: yes
-   state: started
+   name: grafana-server
 
 - name: RedHat | restart firewalld service
   service:
    name: firewalld
-   state: restarted   
+   state: restarted 
+
+- name: start grafana service
+  service:
+   name: grafana-server
+   state: started
+
+- name: restart grafana service
+  service:
+   name: grafana-server
+   state: restarted
