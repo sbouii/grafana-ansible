@@ -1,14 +1,14 @@
 - name: RedHat | Add Grafana repository
   yum_repository:
-    name: {{ redhat_grafana_repository_name }}
-    description: {{ redhat_grafana_repository_description }}
-    baseurl: {{ grafana_repo_url }}
+    name: {{ rh.redhat_grafana_repository_name }}
+    description: {{ rh.redhat_grafana_repository_description }}
+    baseurl: {{ rh.grafana_repo_url }}
     enabled: yes
     gpgcheck: yes
     repo_gpgcheck: yes
-    gpgkey: {{ grafana_repo_key_url }}
+    gpgkey: {{ rh.grafana_repo_key_url }}
     sslverify: yes
-    sslcacert: {{ sslcacert_file }}
+    sslcacert: {{ rh.sslcacert_file }}
 
 - name: RedHat | Install grafana
   yum:

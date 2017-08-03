@@ -35,11 +35,60 @@ More infos in the role's metadata file.
 None.
 
 ## Role variables
+Available variables are listed below, along with the default values.
 
-- **`debian_grafana_repositoy_filename`** - the filename of the kubernetes debian repository 
-- **`redhat_grafana_repositoy_name`** - a unique kubernetes redhat repository ID
-- **`redhat_grafana_repositoy_description`** - a description for the kubernetes redhat repository
-- **`grafana_port`** - grafana server port
+- **`grafana_port: 3000`** - grafana server port
+- **`grafana_user: grafana`** - grafana user
+- **`grafana_group: grafana`** - grafana group
+- **`grafana_home: /usr/share/grafana`** - grafana home directory
+- **`grafana_log_directory: /var/log/grafana`** - grafana log directory
+- **`grafana_data_directory: /var/lib/grafana`** - grafana data directory
+- **`grafana_conf_directory: /etc/grafana`** - grafana configuration directory
+- **`grafana_conf_file: /etc/grafana/grafana.ini`** - grafana configuration file
+- **`grafana_directory_plugin: /var/lib/grafana/plugins`** - grafana plugins directory
+
+Changes made to the Jenkins init script; You can add other option/value pairs if you need to set other options for the Jenkins init file.
+
+```
+- grafana_init_changes:
+  - option: "GRAFANA_USER"
+    value: "{{ grafana_user }}"
+  - option: "GRAFANA_GROUP"
+    value: "{{ grafana_group }}"
+  - option: "GRAFANA_HOME"
+    value:  "{{ grafana_home }}"
+  - option: "LOG_DIR"
+    value: "{{ grafana_log_directory }}"
+  - option: "DATA_DIR"
+    value: "{{ grafana_data_directory }}"
+  - option: "CONF_DIR"
+    value: "{{ grafana_conf_directory }}"
+  - option: "CONF_FILE"
+    value: "{{ grafana_conf_file }}"
+  - option: "PLUGINS_DIR"
+    value: "{{ grafana_directory_plugin }}"
+```
+This role install the stable version of grafana by default, you can override these variables to install other version.
+
+```
+-   # For Debian (role default):
+    grafana_repo_url: deb https://packagecloud.io/grafana/stable/debian/ jessie main
+    grafana_repo_key_url: https://packagecloud.io/gpg.key 
+    # For RedHat/CentOS(role default):
+    grafana_repo_url: https://packagecloud.io/grafana/stable/el/6/$basearch
+    grafana_repo_key_url: https://packagecloud.io/gpg.key https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana
+    
+```
+those are the variables related to the grafana repository setup, you can override these variables by adding your specific values. 
+
+```
+-   # For Debian (role default):
+    grafana_repo_filename: grafana
+    # For RedHat/CentOS(role default):
+    grafana_repo_name: grafana
+    grafana_repo_description: YUM repository
+    
+```
 
 ## Available tags
 
