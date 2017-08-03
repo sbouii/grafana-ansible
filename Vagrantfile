@@ -4,16 +4,11 @@
 Vagrant.configure(2) do |config|
   
    config.vm.box = "debian/jessie64"
-
+  
    config.vm.box_check_update = false
 
    # Disable the default /vagrant share
    config.vm.synced_folder "../data", "/vagrant_data" , disabled: true
-
-   # Update /etc/hosts 
-   config.hostmanager.enabled = true
-   config.hostmanager.manage_host = true
-   config.hostmanager.include_offline = true
 
    config.vm.define "ansible_vm" do |cfg|
     cfg.vm.network "private_network", ip: "192.168.33.101"
