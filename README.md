@@ -50,12 +50,27 @@ Available variables are listed below, see defaults/main.yml for the default valu
 - **`grafana_conf_directory`** - grafana server port
 - **`grafana_conf_file`** - grafana server port
 - **`grafana_directory_plugin`** - grafana server port
-
- jenkins_init_changes:
-      - option: "JENKINS_ARGS"
-        value: "--prefix={{ jenkins_url_prefix }}"
-      - option: "JENKINS_JAVA_OPTIONS"
-        value:
+- `grafana_init_changes:
+  - option: "GRAFANA_USER"
+    value: "{{ grafana_user }}"
+  - option: "GRAFANA_GROUP"
+    value: "{{ grafana_group }}"
+  - option: "GRAFANA_HOME"
+    value:  "{{ grafana_home }}"
+  - option: "LOG_DIR"
+    value: "{{ grafana_log_directory }}"
+  - option: "DATA_DIR"
+    value: "{{ grafana_data_directory }}"
+  - option: "MAX_OPEN_FILES"
+    value: "{{ grafana_max_open_files }}"
+  - option: "CONF_DIR"
+    value: "{{ grafana_conf_directory }}"
+  - option: "CONF_FILE"
+    value: "{{ grafana_conf_file }}"
+  - option: "RESTART_ON_UPGRADE"
+    value: "true"
+  - option: "PLUGINS_DIR"
+    value: "{{ grafana_directory_plugin }}"`
 
 ## Available tags
 
