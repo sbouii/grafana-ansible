@@ -35,11 +35,43 @@ More infos in the role's metadata file.
 None.
 
 ## Role variables
+Available variables are listed below, see defaults/main.yml for the default values:
 
 - **`debian_grafana_repositoy_filename`** - the filename of the kubernetes debian repository 
 - **`redhat_grafana_repositoy_name`** - a unique kubernetes redhat repository ID
 - **`redhat_grafana_repositoy_description`** - a description for the kubernetes redhat repository
 - **`grafana_port`** - grafana server port
+- **`grafana_user`** - 
+- **`grafana_group`** - grafana server port
+- **`grafana_home`** - grafana server port
+- **`grafana_log_directory`** - grafana server port
+- **`grafana_data_directory`** - grafana server port
+- **`grafana_max_open_files`** - grafana server port
+- **`grafana_conf_directory`** - grafana server port
+- **`grafana_conf_file`** - grafana server port
+- **`grafana_directory_plugin`** - grafana server port
+
+- **`grafana_directory_plugin`**
+  - option: "GRAFANA_USER"
+    value: "{{ grafana_user }}"
+  - option: "GRAFANA_GROUP"
+    value: "{{ grafana_group }}"
+  - option: "GRAFANA_HOME"
+    value:  "{{ grafana_home }}"
+  - option: "LOG_DIR"
+    value: "{{ grafana_log_directory }}"
+  - option: "DATA_DIR"
+    value: "{{ grafana_data_directory }}"
+  - option: "MAX_OPEN_FILES"
+    value: "{{ grafana_max_open_files }}"
+  - option: "CONF_DIR"
+    value: "{{ grafana_conf_directory }}"
+  - option: "CONF_FILE"
+    value: "{{ grafana_conf_file }}"
+  - option: "RESTART_ON_UPGRADE"
+    value: "true"
+  - option: "PLUGINS_DIR"
+    value: "{{ grafana_directory_plugin }}"
 
 ## Available tags
 
