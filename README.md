@@ -49,6 +49,8 @@ Available variables are listed below, see defaults/main.yml for the default valu
 - **`grafana_conf_directory`** - grafana configuration directory
 - **`grafana_conf_file`** - grafana configuration file
 - **`grafana_directory_plugin`** - grafana plugins directory
+Changes made to the Jenkins init script; You can add other option/value pairs if you need to set other options for the Jenkins init file.
+
 ```
 - grafana_init_changes:
   - option: "GRAFANA_USER"
@@ -68,6 +70,18 @@ Available variables are listed below, see defaults/main.yml for the default valu
   - option: "PLUGINS_DIR"
     value: "{{ grafana_directory_plugin }}"
 ```
+This role install the stable version of grafana by default, you can override these variables to install other version.
+
+```
+-  # For Debian (role default):
+    grafana_repo_url: deb https://packagecloud.io/grafana/stable/debian/ jessie main
+    grafana_repo_key_url: https://packagecloud.io/gpg.key 
+    # For RedHat/CentOS(role default):
+    grafana_repo_url: https://packagecloud.io/grafana/stable/el/6/$basearch
+    grafana_repo_key_url: https://packagecloud.io/gpg.key https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana
+    
+```
+
 ## Available tags
 
 - **`install-grafana`** -  Default tag to perform grafana installation
