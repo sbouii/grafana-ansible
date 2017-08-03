@@ -50,7 +50,8 @@ Available variables are listed below, see defaults/main.yml for the default valu
 - **`grafana_conf_directory`** - grafana server port
 - **`grafana_conf_file`** - grafana server port
 - **`grafana_directory_plugin`** - grafana server port
-- **`grafana_init_changes:
+```
+- grafana_init_changes:
   - option: "GRAFANA_USER"
     value: "{{ grafana_user }}"
   - option: "GRAFANA_GROUP"
@@ -70,8 +71,8 @@ Available variables are listed below, see defaults/main.yml for the default valu
   - option: "RESTART_ON_UPGRADE"
     value: "true"
   - option: "PLUGINS_DIR"
-    value: "{{ grafana_directory_plugin }}"`**
-
+    value: "{{ grafana_directory_plugin }}"
+```
 ## Available tags
 
 - **`install-grafana`** -  Default tag to perform grafana installation
