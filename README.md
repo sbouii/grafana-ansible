@@ -38,14 +38,15 @@ None.
 Available variables are listed below, along with the default values.
 
 - **`grafana_port: 3000`** - grafana server port
-- **`grafana_user: grafana`** - grafana 
-- **`grafana_group: grafana`** - grafana 
+- **`grafana_user: grafana`** - grafana user
+- **`grafana_group: grafana`** - grafana group
 - **`grafana_home: /usr/share/grafana`** - grafana home directory
 - **`grafana_log_directory: /var/log/grafana`** - grafana log directory
 - **`grafana_data_directory: /var/lib/grafana`** - grafana data directory
 - **`grafana_conf_directory: /etc/grafana`** - grafana configuration directory
 - **`grafana_conf_file: /etc/grafana/grafana.ini`** - grafana configuration file
 - **`grafana_directory_plugin: /var/lib/grafana/plugins`** - grafana plugins directory
+
 Changes made to the Jenkins init script; You can add other option/value pairs if you need to set other options for the Jenkins init file.
 
 ```
