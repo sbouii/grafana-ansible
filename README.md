@@ -42,14 +42,13 @@ Available variables are listed below, see defaults/main.yml for the default valu
 - **`redhat_grafana_repositoy_description`** - a description for the kubernetes redhat repository
 - **`grafana_port`** - grafana server port
 - **`grafana_user`** - 
-- **`grafana_group`** - grafana server port
-- **`grafana_home`** - grafana server port
-- **`grafana_log_directory`** - grafana server port
-- **`grafana_data_directory`** - grafana server port
-- **`grafana_max_open_files`** - grafana server port
-- **`grafana_conf_directory`** - grafana server port
-- **`grafana_conf_file`** - grafana server port
-- **`grafana_directory_plugin`** - grafana server port
+- **`grafana_group`** - 
+- **`grafana_home`** - grafana home directory
+- **`grafana_log_directory`** - grafana log directory
+- **`grafana_data_directory`** - grafana data directory
+- **`grafana_conf_directory`** - grafana configuration directory
+- **`grafana_conf_file`** - grafana configuration file
+- **`grafana_directory_plugin`** - grafana plugins directory
 ```
 - grafana_init_changes:
   - option: "GRAFANA_USER"
@@ -62,14 +61,10 @@ Available variables are listed below, see defaults/main.yml for the default valu
     value: "{{ grafana_log_directory }}"
   - option: "DATA_DIR"
     value: "{{ grafana_data_directory }}"
-  - option: "MAX_OPEN_FILES"
-    value: "{{ grafana_max_open_files }}"
   - option: "CONF_DIR"
     value: "{{ grafana_conf_directory }}"
   - option: "CONF_FILE"
     value: "{{ grafana_conf_file }}"
-  - option: "RESTART_ON_UPGRADE"
-    value: "true"
   - option: "PLUGINS_DIR"
     value: "{{ grafana_directory_plugin }}"
 ```
