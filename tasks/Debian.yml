@@ -4,9 +4,10 @@
     state: present
 
 - name: Debian | Add repository
-  repo: {{ deb.grafana_repo_url }}
-  state: present
-  filename: {{ deb.debian_grafana_repository_filename }}
+  apt_repository:
+    repo: {{ deb.grafana_repo_url }}
+    state: present
+    filename: {{ deb.debian_grafana_repository_filename }}
 
 - name: Debian | Install Grafana
   apt: 
