@@ -9,6 +9,7 @@ Vagrant.configure(2) do |config|
 
    # Disable the default /vagrant share
    config.vm.synced_folder "../data", "/vagrant_data" , disabled: true
+  
    config.vm.define "ansible-vm" do |cfg|
     cfg.vm.network "private_network", ip: "192.168.33.11"
     cfg.vm.hostname = "ansible-vm"        
