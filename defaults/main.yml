@@ -1,4 +1,4 @@
----
+
  grafana_port: 3000
  grafana_user: grafana
  grafana_group: grafana
@@ -9,7 +9,7 @@
  grafana_conf_directory: /etc/grafana
  grafana_conf_file: /etc/grafana/grafana.ini
  grafana_directory_plugin: /var/lib/grafana/plugins
-grafana_init_changes:
+ grafana_init_changes:
   - option: "GRAFANA_USER"
     value: "{{ grafana_user }}"
   - option: "GRAFANA_GROUP"

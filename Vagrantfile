@@ -10,23 +10,18 @@ Vagrant.configure(2) do |config|
    # Disable the default /vagrant share
    config.vm.synced_folder "../data", "/vagrant_data" , disabled: true
 
-   # Update /etc/hosts 
-   config.hostmanager.enabled = true
-   config.hostmanager.manage_host = true
-   config.hostmanager.include_offline = true
-
-   config.vm.define "ansible_vm" do |cfg|
-    cfg.vm.network "private_network", ip: "192.168.33.101"
-    cfg.vm.hostname = "ansible_vm"    
+   config.vm.define "ansible-vm" do |cfg|
+    cfg.vm.network "private_network", ip: "192.168.33.10"
+    cfg.vm.hostname = "ansible-vm"    
     cfg.vm.provider "virtualbox" do |vb|
      vb.gui = true
-     vb.name = 'ansible_vm'
-     vb.memory = "1750"
+     vb.name = 'ansible-vm'
+     vb.memory = "1200"
     end
     cfg.vm.provision :ansible do |ansible|
      ansible.playbook = 'provision.yml'
      ansible.inventory_path = 'vagrant-inventory.ini'
-     ansible.limit = 'ansible_vm'
+     ansible.limit = 'ansible-vm'
      ansible.verbose = 'v'
     end
    end

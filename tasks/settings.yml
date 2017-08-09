@@ -1,6 +1,6 @@
 - name: Modify variables in init file
   lineinfile:
-    dest: "{{ grafana_init_file }}"
+    dest: "{{ deb.grafana_init_file }}"
     insertafter: '^{{ item.option }}='
     regexp: '^{{ item.option}}=\"\${{ item.option }} '
     line: '{{ item.option }}="${{ item.option }} {{ item.value }}"'

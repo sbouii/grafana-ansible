@@ -1,25 +1,33 @@
+- name: Debian | Install dependencies 
+  apt:
+   name: "{{ item }}"
+   state: installed
+  with_items:
+   - apt-transport-https
+   - ufw
+
 - name: Debian | Add GPG key
   apt_key:
-    url: {{ deb.grafana_repo_key_url }} 
+    url: "{{ deb.grafana_repo_key_url }}" 
     state: present
 
 - name: Debian | Add repository
-  repo: {{ deb.grafana_repo_url }}
-  state: present
-  filename: {{ deb.debian_grafana_repository_filename }}
+  apt_repository:
+    repo: "{{ deb.grafana_repo_url }}"
+    state: present
+    filename: "{{ deb.grafana_repo_filename }}"
 
 - name: Debian | Install Grafana
   apt: 
    name: grafana
    state: installed
-   update_cache: yes
-   notify:
-    - Debian | init grafana service debian
+  notify:
+   - Debian | init grafana service 
 
 - name: Debian | Allow grafana port in UFW
   ufw:
    rule: allow
-   port: {{ deb.grafana_port }}
+   port: "{{ grafana_port }}"
    proto: tcp
-   notify:
-    - start grafana service
+  notify:
+   - start grafana service

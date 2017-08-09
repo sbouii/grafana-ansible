@@ -1,4 +1,4 @@
-- hosts: ansible_vm
+- hosts: ansible-vm
   sudo: yes
   roles:
-   - ansible_vm
+   - grafana_ansible
