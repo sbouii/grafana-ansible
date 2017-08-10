@@ -17,7 +17,7 @@ Grafana . I prefer always to separe the installation and the configuration/monit
 
 - **Ansible 2.2** or higher
 
-- **[Vagrant](https://www.vagrantup.com/) 1.7** or higher 
+- **[Vagrant](https://www.vagrantup.com/) 1.8** or higher 
 
 - **Virtualbox**
 
