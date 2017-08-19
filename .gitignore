@@ -1,5 +1,5 @@
- .vagrant/
- .kitchen
- .kitchen.local.yml
- .Vagrantfile.swp
- provision.retry
+.vagrant/
+.kitchen
+.kitchen.local.yml
+.Vagrantfile.swp
+provision.retry

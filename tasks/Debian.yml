@@ -1,4 +1,4 @@
-- name: Debian | Install dependencie 
+- name: Debian | Install dependenci 
   apt:
    name: "{{ item }}"
    state: installed
