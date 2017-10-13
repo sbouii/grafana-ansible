@@ -1,9 +1,9 @@
-# grafana_ansible
+# grafana-ansible
 
 ## Description
 
-[![Ansible Galaxy](https://img.shields.io/badge/galaxy-sbouii.grafana_ansible-blue.svg)](https://galaxy.ansible.com/sbouii/grafana_ansible/) 
-[![Build Status](https://travis-ci.org/sbouii/grafana_ansible.svg?branch=master)](https://travis-ci.org/sbouii/grafana_ansible)
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-sbouii.grafana-blue.svg)](https://galaxy.ansible.com/sbouii/grafana/) 
+[![Build Status](https://travis-ci.org/sbouii/grafana-ansible.svg?branch=master)](https://travis-ci.org/sbouii/grafana-ansible)
 
 
 This is an ansible role for installing Grafana on Debian and RedHat distributions , it doesn't handle the configuration aspect of 
@@ -135,5 +135,5 @@ To run the default test suite, for instance, on a Ubuntu Trusty platform, run th
 
 ## Author information
 
-This role was created by [Mariem Sbouii](https://www.linkedin.com/in/mariem-sboui-76906711b) ,a DevOps enthusiast.
+This role was created by [Mariem Sbouii](https://www.linkedin.com/in/mariem-sboui-76906711b) ,a SRE enthusiast.
 
