@@ -4,7 +4,8 @@
 Vagrant.configure(2) do |config|
   
    config.vm.box = "geerlingguy/centos7"
-   config.ssh.insert_key = false  
+   config.ssh.insert_key = false 
+  # Disable updates check
    config.vm.box_check_update = false
 
    # Disable the default /vagrant share
