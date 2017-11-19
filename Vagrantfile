@@ -4,6 +4,7 @@
 Vagrant.configure(2) do |config|
   
    config.vm.box = "geerlingguy/centos7"
+  # Do not use vagrant insecure key
    config.ssh.insert_key = false 
   # Disable updates check
    config.vm.box_check_update = false
