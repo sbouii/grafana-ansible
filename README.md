@@ -98,7 +98,7 @@ those are the variables related to the grafana repository setup, you can overrid
 
 In order to set up a grafana server across your plateform, start by checking out the role from Ansible galaxy:
 ```bash
-ansible-galaxy install sbouii.grafana_ansible
+ansible-galaxy install sbouii.grafana
 ```
 
 Finally call the role within you Ansible playbook:
@@ -107,7 +107,7 @@ Finally call the role within you Ansible playbook:
 - hosts: localhost
   sudo: yes
   roles:
-    - grafana_ansible
+    - sbouii.grafana
 ```
 ## Development and Testing
 ### Test with Vagrant
