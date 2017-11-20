@@ -15,11 +15,11 @@ Grafana . I prefer always to separe the installation and the configuration/monit
 
 - **Python 2.7** or higher
 
-- **Ansible 2.2** or higher
+- **Ansible 2.3.1.0**(pip install ansible==2.3.1.0)
 
-- **[Vagrant](https://www.vagrantup.com/) 1.8** or higher 
+- **[Vagrant](https://www.vagrantup.com/) 1.9** 
 
-- **Virtualbox**
+- **Virtualbox 5.1.**
 
 ## Supported Systems
 
