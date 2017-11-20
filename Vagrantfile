@@ -3,7 +3,7 @@
 
 Vagrant.configure(2) do |config|
   
-   config.vm.box = "debian/jessie64"
+   config.vm.box = "centos/7"
 
   # Do not use vagrant insecure key
    config.ssh.insert_key = false
