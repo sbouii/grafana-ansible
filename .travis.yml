@@ -14,9 +14,11 @@ install:
   - ansible --version
 
 script:
+  # Set Ansible roles_path
   - export ANSIBLE_ROLES_PATH="../"
+  # Basic role syntax check
   - ansible-playbook -i test/travis/inventory.ini --syntax-check test/travis/provision.yml
   - ansible-playbook -i test/travis/inventory.ini --connection=local --sudo test/travis/provision.yml
 
 notifications:
-webhooks: https://galaxy.ansible.com/api/v1/notifications
+  webhooks: https://galaxy.ansible.com/api/v1/notifications

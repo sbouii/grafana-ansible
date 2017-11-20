@@ -7,8 +7,6 @@ Vagrant.configure(2) do |config|
 
   # Do not use vagrant insecure key
    config.ssh.insert_key = false
-  
-   config.vm.box = "geerlingguy/centos7"
 
   # Do not use vagrant insecure key
    config.ssh.insert_key = false 
