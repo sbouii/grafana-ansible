@@ -15,8 +15,6 @@ rh:
 
   grafana_repo_description: YUM repository
 
-  grafana_repo_description: YUM repository
-
   sslcacert_file: /etc/pki/tls/certs/ca-bundle.crt
 
   grafana_init_file: /etc/sysconfig/grafana-server 
