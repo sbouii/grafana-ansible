@@ -1,4 +1,4 @@
 - hosts: ansible-vm
   sudo: yes
   roles:
-   - sbouii.grafana
+   - grafana-ansible

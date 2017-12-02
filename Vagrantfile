@@ -3,13 +3,7 @@
 
 Vagrant.configure(2) do |config|
   
-   config.vm.box = "centos/7"
-
-  # Do not use vagrant insecure key
-   config.ssh.insert_key = false
-
-  # Do not use vagrant insecure key
-   config.ssh.insert_key = false 
+   config.vm.box = "centos/7" 
 
   # Disable updates check
    config.vm.box_check_update = false

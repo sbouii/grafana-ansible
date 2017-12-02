@@ -15,8 +15,8 @@
     name: grafana
     state: installed
     update_cache: yes
-    notify:
-      - RedHat | init grafana service redhat
+  notify:
+    - RedHat | init grafana service redhat
 # firewalld is inactive by default on redhat disctributions
 - name: RedHat | Enable firewalld
   service: 
