@@ -7,14 +7,12 @@ deb:
   grafana_init_file: /etc/default/grafana-server
 
 rh:
-  grafana_repo_url: https://packagecloud.io/grafana/stable/el/6/$basearch
+  grafana_repo_url: https://packagecloud.io/grafana/stable/el/$releasever/$basearch
 
-  grafana_repo_key_url:  https://packagecloud.io/gpg.key https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana
+  grafana_repo_key_url:  https://grafanarel.s3.amazonaws.com/RPM-GPG-KEY-grafana
 
   grafana_repo_name: grafana
 
-  grafana_repo_description: YUM repository
-
-  sslcacert_file: /etc/pki/tls/certs/ca-bundle.crt
+  grafana_repo_description: grafana YUM repository
 
   grafana_init_file: /etc/sysconfig/grafana-server 

@@ -3,18 +3,14 @@
     name: "{{ rh.grafana_repo_name }}"
     description: "{{ rh.grafana_repo_description }}"
     baseurl: "{{ rh.grafana_repo_url }}"
-    enabled: yes
     gpgcheck: yes
     repo_gpgcheck: yes
     gpgkey: "{{ rh.grafana_repo_key_url }}"
-    sslverify: yes
-    sslcacert: "{{ rh.sslcacert_file }}"
 
 - name: RedHat | Install grafana
-  yum:
+  package:
     name: grafana
-    state: installed
-    update_cache: yes
+    state: present
   notify:
     - RedHat | init grafana service redhat
 # firewalld is inactive by default on redhat disctributions
