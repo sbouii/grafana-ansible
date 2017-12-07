@@ -47,7 +47,7 @@ Available variables are listed below, along with the default values.
 - **`grafana_conf_file: /etc/grafana/grafana.ini`** - grafana configuration file
 - **`grafana_directory_plugin: /var/lib/grafana/plugins`** - grafana plugins directory
 
-Changes made to the Jenkins init script; You can add other option/value pairs if you need to set other options for the Jenkins init file.
+You can add other option/value pairs if you need to set other options for the Grafana init file.
 
 ```
 - grafana_init_changes:
