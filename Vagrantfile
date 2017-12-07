@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  
+
    config.vm.box = "debian/jessie" 
 
   # Disable updates check
