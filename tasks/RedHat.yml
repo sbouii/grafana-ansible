@@ -24,4 +24,4 @@
   command: firewall-cmd --permanent --zone=public --add-port=3000/tcp
   notify: 
     - RedHat | restart firewalld service
-    - start grafana
+    - start grafana service
