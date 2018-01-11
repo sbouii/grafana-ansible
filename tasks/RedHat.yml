@@ -12,7 +12,7 @@
     name: grafana
     state: present
   notify:
-    - RedHat | init grafana service redhat
+    - RedHat | init grafana service
 # firewalld is inactive by default on redhat disctributions
 - name: RedHat | Enable firewalld
   service: 
@@ -23,5 +23,5 @@
 - name: RedHat | Allow grafana port 
   command: firewall-cmd --permanent --zone=public --add-port=3000/tcp
   notify: 
-    - restart firewalld
+    - RedHat | restart firewalld service
     - start grafana
