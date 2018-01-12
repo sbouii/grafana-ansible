@@ -1,4 +1,4 @@
-- name: Modify variables in init file
+- name: Debian | Modify variables in init file
   lineinfile:
     dest: "{{ deb.grafana_init_file }}"
     insertafter: '^{{ item.option }}='
@@ -8,3 +8,14 @@
   with_items:
        "{{ grafana_init_changes }}"
   when: ansible_os_family == 'Debian'
+  
+- name: RedHat | Modify variables in init file
+  lineinfile:
+    dest: "{{ rh.grafana_init_file }}"
+    insertafter: '^{{ item.option }}='
+    regexp: '^{{ item.option}}=\"\${{ item.option }} '
+    line: '{{ item.option }}="${{ item.option }} {{ item.value }}"'
+    state: present
+  with_items:
+       "{{ grafana_init_changes }}"
+  when: ansible_os_family == 'RedHat'
