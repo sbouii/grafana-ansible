@@ -10,7 +10,7 @@
   apt_key:
     url: "{{ deb.grafana_repo_key_url }}" 
     state: present
-
+    validate_certs: False
 - name: Debian | Add repository
   apt_repository:
     repo: "{{ deb.grafana_repo_url }}"
