@@ -1,10 +1,7 @@
-- name: Include OS-Specific variables
-  include_vars: main.yml 
-
 - include: validate.yml
-  tags: 
+  tags:
     - install-grafana
-   
+
 - include: Debian.yml
   when: ansible_os_family == 'Debian'
   tags:
